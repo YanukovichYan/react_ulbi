@@ -7,9 +7,9 @@ import MyButton from "../components/UI/button/MyButton";
 import MyModal from "../components/UI/MyModal/MyModal";
 import PostForm from "../components/PostForm";
 import PostFilter from "../components/PostFilter";
-import Loader from "../components/UI/Loader/Loader";
 import PostList from "../components/PostList";
 import Pagination from "../components/UI/pagination/Pagination";
+import MySelect from "../components/UI/select/MySelect";
 
 export function Posts() {
 
@@ -36,7 +36,7 @@ export function Posts() {
 
     useEffect(() => {
         fetching()
-    }, [page])
+    }, [page, limit])
 
     const removePost = (post) => {
         setPosts(posts.filter(p => {
@@ -64,6 +64,17 @@ export function Posts() {
                 error &&
                 <h1>Произошла ошибка</h1>
             }
+            <MySelect
+            value={limit}
+            onChange={value => setLimit(value)}
+            defaultValue="Кол-во эл на странице"
+            options={[
+                {value: 5, name: 5},
+                {value: 10, name: 10},
+                {value: 25, name: 25},
+                {value: -1, name: "All"},
+            ]}
+            />
             {
                 isLoading
                     ? null

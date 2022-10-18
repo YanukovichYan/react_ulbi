@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import MyInput from "../components/UI/input/MyInput";
 import MyButton from "../components/UI/button/MyButton";
 import {AuthContext} from "../context";
-import {Navigate, Outlet, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export const Login = () => {
 
