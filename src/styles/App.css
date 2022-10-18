@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.App {
+    width: 800px;
+}
+
+.post {
+    display: flex;
+    padding: 15px;
+    border: 2px solid teal;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post__btns {
+    display: flex;
+}
+
+.remove-btn {
+    margin-right: 0.5rem;
+}
+
+.post-enter {
+    transform: translateX(-350px);
+}
+
+.post-enter-active {
+    transform: translateX(0);
+    transition: all 500ms ease-in;
+}
+
+.post-exit {
+    opacity: 1;
+}
+
+.post-exit-active {
+    transform: translateX(-350px);
+    transition: all 500ms ease-in;
+}
+
+.pageWrapper {
+    text-align: center;
+    margin: 30px;
+}
+
+.page {
+    border: 1px solid teal;
+    padding: 5px 7px;
+    cursor: pointer;
+}
+
+.page + .page {
+    margin-left: 10px;
+}
+
+.pageCurrent {
+    border: 2px solid orange;
+    font-weight: bold;
+}
+
+.navBar {
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background-color: lightgray;
+}
+
+.navBarLinks {
+    margin-left: auto;
+}
